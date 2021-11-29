@@ -55,7 +55,9 @@ Route::get('/view-note', [ActionsController::class,'viewNote']);
 Route::get('/view-todo', [ActionsController::class,'viewTodo']);
 Route::get('/tolearn', [ActionsController::class,'tolearn']);
 Route::get('/gratitude', [GratitudeController::class,'gratitude']);
-
+Route::get('/projects', [ProjectController::class,'projects']);
+Route::get('/create-project', [ProjectController::class,'createProject']);
+Route::get('/view-project', [ProjectController::class,'viewProject']);
 
 Route::post('/save-event', [PlansController::class,'eventPost']);
 Route::post('/user-post', [ProfileController::class,'userPost']);
