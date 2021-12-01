@@ -59,7 +59,11 @@ Route::get('/projects', [ProjectController::class,'projects']);
 Route::get('/create-project', [ProjectController::class,'createProject']);
 Route::get('/view-project', [ProjectController::class,'viewProject']);
 
+Route::get('/paint', [GratitudeController::class,'paint']);
+
+
 Route::post('/save-event', [PlansController::class,'eventPost']);
 Route::post('/user-post', [ProfileController::class,'userPost']);
+Route::get('/logout', [AuthController::class,'logout']);
 
 
