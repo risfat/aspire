@@ -60,7 +60,12 @@ Route::get('/create-project', [ProjectController::class,'createProject']);
 Route::get('/view-project', [ProjectController::class,'viewProject']);
 
 Route::get('/paint', [GratitudeController::class,'paint']);
-
+Route::get('/add-five-min-journal', [GratitudeController::class,'fiveMinuteJournal']);
+Route::get('/view-journal', [GratitudeController::class,'viewJournal']);
+Route::get('/view-project', [ProjectController::class,'projectView']);
+Route::get('/goal-edit/{id}', [GoalsController::class,'goalEdit']);
+Route::get('/view-goal', [GoalsController::class,'goalView']);
+Route::get('/user-edit/{id}', [ProfileController::class,'userEdit']);
 
 Route::post('/save-event', [PlansController::class,'eventPost']);
 Route::post('/user-post', [ProfileController::class,'userPost']);
