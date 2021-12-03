@@ -34,6 +34,7 @@ use Spatie\Ray\Payloads\NewScreenPayload;
 use Spatie\Ray\Payloads\NotifyPayload;
 use Spatie\Ray\Payloads\PhpInfoPayload;
 use Spatie\Ray\Payloads\RemovePayload;
+use Spatie\Ray\Payloads\SeparatorPayload;
 use Spatie\Ray\Payloads\ShowAppPayload;
 use Spatie\Ray\Payloads\SizePayload;
 use Spatie\Ray\Payloads\TablePayload;
@@ -497,6 +498,13 @@ class Ray
         return $this;
     }
 
+    public function separator(): self
+    {
+        $payload = new SeparatorPayload();
+
+        return $this->sendRequest($payload);
+    }
+
     public function html(string $html = ''): self
     {
         $payload = new HtmlPayload($html);
@@ -599,6 +607,10 @@ class Ray
         }
 
         $arguments = array_map(function ($argument) {
+            if (is_string($argument)) {
+                return $argument;
+            }
+
             if (! is_callable($argument)) {
                 return $argument;
             }

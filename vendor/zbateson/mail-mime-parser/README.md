@@ -14,7 +14,7 @@ The goals of this project are to be:
 * Standards-compliant but forgiving
 * Tested where possible
 
-To include it for use in your project, install via composer:
+To include it for use in your project, install it via composer:
 
 ```
 composer require zbateson/mail-mime-parser
@@ -22,7 +22,7 @@ composer require zbateson/mail-mime-parser
 
 ## Sponsors
 
-[![SecuMailer](sponsors/logo-secumailer.png)](https://secumailer.com)
+[![SecuMailer](https://mail-mime-parser.org/sponsors/logo-secumailer.png)](https://secumailer.com)
 
 A huge thank you to [all my sponsors](https://github.com/sponsors/zbateson). <3
 
@@ -41,7 +41,7 @@ Because of the on-demand parsing, starting in 2.0, the passed resource handle or
 Old code:
 ```php
 $handle = fopen('file.mime', 'r');
-$message = $mailParser->parse($handle);         // returns `IMessage`
+$message = $mailParser->parse($handle);         // returned `Message`
 fclose($handle);
 ```
 
@@ -68,15 +68,17 @@ use ZBateson\MailMimeParser\Header\HeaderConsts;
 // use an instance of MailMimeParser as a class dependency
 $mailParser = new MailMimeParser();
 
-$handle = fopen('file.mime', 'r');
 // parse() accepts a string, resource or Psr7 StreamInterface
 // pass `true` as the second argument to attach the passed $handle and close
-// it when the IMessage is destroyed.
+// it when the returned IMessage is destroyed.
+$handle = fopen('file.mime', 'r');
 $message = $mailParser->parse($handle, false);         // returns `IMessage`
 
 // OR: use this procedurally (Message::from also accepts a string,
 // resource or Psr7 StreamInterface
-$message = Message::from($string);
+// true or false as second parameter doesn't matter if passing a string.
+$string = "Content-Type: text/plain\r\nSubject: Test\r\n\r\nMessage";
+$message = Message::from($string, false);
 
 echo $message->getHeaderValue(HeaderConsts::FROM);     // user@example.com
 echo $message
@@ -122,7 +124,7 @@ fclose($handle);
 ## Documentation
 
 * [Usage Guide](https://mail-mime-parser.org/)
-* [API Reference](https://mail-mime-parser.org/api/2.0)
+* [API Reference](https://mail-mime-parser.org/api/2.1)
 
 ## Upgrading to 1.x or 2.x
 

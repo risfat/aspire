@@ -2,6 +2,37 @@
 
 All notable changes to `ray` will be documented in this file
 
+## 1.32.0 - 2021-11-26
+
+## What's Changed
+
+- Add separator payload by @freekmurze in https://github.com/spatie/ray/pull/599
+
+**Full Changelog**: https://github.com/spatie/ray/compare/1.31.0...1.32.0
+
+## 1.31.0 - 2021-11-17
+
+## What's Changed
+
+- Docs for duplicate queries logging by @masterix21 in https://github.com/spatie/ray/pull/560
+- Add context to ApplicationLog by @keithbrink in https://github.com/spatie/ray/pull/562
+
+## New Contributors
+
+- @masterix21 made their first contribution in https://github.com/spatie/ray/pull/560
+- @keithbrink made their first contribution in https://github.com/spatie/ray/pull/562
+
+**Full Changelog**: https://github.com/spatie/ray/compare/1.30.4...1.31.0
+
+## 1.30.4 - 2021-11-11
+
+## What's Changed
+
+- Point to "servers" instead of singular "server" by @jmslbam in https://github.com/spatie/ray/pull/583
+- Fix for sending "value" (by @freekmurze)
+
+**Full Changelog**: https://github.com/spatie/ray/compare/1.30.3...1.30.4
+
 ## 1.30.3 - 2021-10-08
 
 - Bug/567 global functions (#573)
