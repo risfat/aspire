@@ -214,7 +214,24 @@ class DeleteController extends BaseController
 
 
 
+            case 'board':
 
+                $board = User::find($id);
+    
+                if ($board){
+    
+                    if($board->id === $this->user->id)
+                      {
+                        abort(401);
+                    }
+    
+                    $board->delete();
+    
+                    return redirect('/staff');
+
+                    }
+    
+                break;
 
 
             case 'staff':
