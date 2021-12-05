@@ -227,7 +227,7 @@ class DeleteController extends BaseController
     
                     $board->delete();
     
-                    return redirect('/staff');
+                    return redirect('/board');
 
                     }
     
